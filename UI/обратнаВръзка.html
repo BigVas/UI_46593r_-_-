@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
+    </script>
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+    $(function () {
+      var icons = {
+        header: "ui-icon-circle-arrow-e",
+        activeHeader: "ui-icon-circle-arrow-s"
+      };
+      $("#accordion").accordion({
+        icons: icons
+      });
+      $("#toggle").button().on("click", function () {
+        if ($("#accordion").accordion("option", "icons")) {
+          $("#accordion").accordion("option", "icons", null);
+        } else {
+          $("#accordion").accordion("option", "icons", icons);
+        }
+      });
+    });
+  </script>
+
+  <title>Обратна връзка</title>
+</head>
+
+<style>
+    .card>img {
+      min-height: 150px;
+      max-height: 150px;
+    }
+  
+    p.card-text {
+      min-height: 100px;
+      max-height: 100px;
+    }
+
+    main {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: grey;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.containe {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+  </style>
+  
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+            <img src="Chevrolet-Logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            Chevrolet
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Начало</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="автомобили.html">Автомобили</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="обратнаВръзка.html">Обратна връзка</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+  
+      <div style="position: absolute; z-index: -1;" id="carouselExampleControls" class="carousel slide w-100"
+        data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img style="height: 70vh;" src="chevy1.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img style="height: 70vh;" src="chevy7.jpeg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img style="height: 70vh;" src="chevy8.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+  
+      </div>
+  
+      <div style="min-height: 470px;" class="container-fluid text-center p-5">
+        <h1 style="text-shadow: 2px 2px #ffffff;">Автокъщи Chevrolet</h1>
+        <div class="container">
+          <h2 style="text-shadow: 2px 2px #ffffff;">С над 5,000 автокъщи на Chevrolet в България и с над 500,000 коли,
+            със сигурност ще намериш твоята нова мечтана кола.</h2>
+        </div>
+      </div>
+    </header>
+
+    <main>
+
+<div class="containe">
+  <form action="/action_page.php">
+    <label for="fname">Име:</label>
+    <input type="text" id="fname" name="firstname" placeholder="Вашето име..">
+
+    <label for="lname">Фамилия:</label>
+    <input type="text" id="lname" name="lastname" placeholder="Вашата фамилия..">
+
+    <label for="country">Държава:</label>
+    <select id="country" name="country">
+      <option value="bulgaria">България</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+      <option value="australia">Australia</option>
+    </select>
+
+    <label for="subject">Отзив:</label>
+    <textarea id="subject" name="subject" placeholder="Напишете ни нещо :)" style="height:200px"></textarea>
+
+    <input type="submit" value="Изпрати">
+  </form>
+</div>
+
+
+    </main>
+
+    <footer class="bg-dark text-center text-white">
+        <section class="">
+          <div class="container text-center text-md-start mt-5">
+            <div class="row mt-3">
+              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                <h6 class="text-uppercase fw-bold mb-4">
+                  <i class="fas fa-gem me-3">Автокъщи Chevrolet</i>
+                </h6>
+                <p><b>
+                  Над 5,000 автокъщи и над 500,000 автомобила.
+                 </b></p>
+              </div>
+              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                <h6 class="text-uppercase fw-bold mb-4">Свържете се с нас:</h6>
+                <p><i class="fas fa-home me-3"></i> Главен център: България Ботевграг</p>
+                <p>
+                  <i class="fas fa-envelope me-3"></i>
+                  Е-mail: 46593r@unibit.bg
+                </p>
+                <p><i class="fas fa-phone me-3"></i>Телефон: 0-88-69-29-176</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </footer>
+</body>
+</html>
